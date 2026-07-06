@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-blue-950: #050814;
+  --color-blue-900: #0b1329;
+  --color-blue-800: #131f3c;
+  --color-blue-700: #1d4ed8;
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #60a5fa;
+  --color-blue-300: #93c5fd;
+
+  --color-yellow-600: #ca8a04;
+  --color-yellow-500: #eab308;
+  --color-yellow-400: #facc15;
+  --color-yellow-300: #fde047;
+  --color-yellow-200: #fef08a;
+}
+
+:root,
+[data-theme="light"] {
+  /* Light theme - Clean Futuristic Ice Blue & Luminous Yellow */
+  --background: #f0f5ff;
+  --foreground: #090e1a;
+  --card: #ffffff;
+  --card-foreground: #090e1a;
+  --popover: #ffffff;
+  --popover-foreground: #090e1a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #fef9c3;
+  --secondary-foreground: #854d0e;
+  --muted: #e2e8f0;
+  --muted-foreground: #475569;
+  --accent: #eff6ff;
+  --accent-foreground: #1e40af;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #eab308;
+  --radius: 0.85rem;
+}
+
+[data-theme="dark"] {
+  /* Dark theme - Deep Cyber Midnight Void & Neon Yellow/Blue */
+  --background: #050814;
+  --foreground: #f8fafc;
+  --card: #0b1329;
+  --card-foreground: #f8fafc;
+  --popover: #0b1329;
+  --popover-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #050814;
+  --secondary: #1e293b;
+  --secondary-foreground: #fde047;
+  --muted: #131f3c;
+  --muted-foreground: #94a3b8;
+  --accent: #1e3a8a;
+  --accent-foreground: #fbbf24;
+  --destructive: #991b1b;
+  --destructive-foreground: #ffffff;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #facc15;
+  --radius: 0.85rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* Futuristic Cyber Utilities */
+.glass-panel {
+  background: rgba(11, 19, 41, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--ring);
+  box-shadow: 0 15px 35px -10px rgba(250, 204, 21, 0.18), 0 0 15px -3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.25), 0 0 15px -2px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* Glowing Cyber Shadows */
+.shadow-glow-blue {
+  box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.4), 0 0 10px -2px rgba(59, 130, 246, 0.3);
+}
+
+.shadow-glow-yellow {
+  box-shadow: 0 0 25px -5px rgba(250, 204, 21, 0.45), 0 0 10px -2px rgba(250, 204, 21, 0.35);
+}
+
+.shadow-cyber {
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.15), 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+/* Futuristic Grid Backgrounds */
+.bg-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+[data-theme="dark"] .bg-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Vibrant Radial Mesh Background */
+.bg-mesh-gradient {
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(37, 99, 235, 0.12) 0px, transparent 45%),
+    radial-gradient(at 90% 90%, rgba(234, 179, 8, 0.1) 0px, transparent 45%),
+    radial-gradient(at 50% 50%, rgba(96, 165, 250, 0.05) 0px, transparent 60%);
+}
+
+[data-theme="dark"] .bg-mesh-gradient {
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(59, 130, 246, 0.18) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(250, 204, 21, 0.14) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(30, 58, 138, 0.2) 0px, transparent 60%);
+}
